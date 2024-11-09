@@ -182,16 +182,50 @@ ul, ol {
 
 /* Студія */
 .studio {
-    padding: 120px 0;
+    padding: 96px 0;
+
+    @media (min-width: 768px) {
+        /* 768px: Для планшетів */
+        padding: 120px 0;
+    }
+
+    @media (min-width: 1158px) {
+        /* 1158px: Для десктопів */
+        padding: 120px 0;
+    }
 }
 
 .studio-list {
     display: flex;
-    gap: 24px;
+    gap: 72px;
+    flex-wrap: wrap;
+    flex-direction: row;
+
+    @media (min-width: 768px) {
+        /* 768px: Для планшетів */
+        row-gap: 72px;
+        column-gap: 24px;
+    }
+
+    @media (min-width: 1158px) {
+        /* 1158px: Для десктопів */
+        flex-wrap: nowrap;
+        gap: 24px;
+        flex-direction: row;
+    }
 }
 
 .studio-item {
-    flex-basis: calc((100% - 3 * 24px) / 4);
+    flex-basis: 100%;
+    @media (min-width: 768px) {
+        /* 768px: Для планшетів */
+        flex-basis: calc(50% - 20px);
+    }
+
+    @media (min-width: 1158px) {
+        /* 1158px: Для десктопів */
+        flex-basis: calc((100% - 3 * 24px) / 4);
+    }
 }
 
 .visually-hidden {
@@ -231,11 +265,6 @@ ul, ol {
         line-height: 1.2;
     }
 
-    .studio-list {
-        flex-direction: column;
-        gap: 20px;
-    }
-
     .studio-item {
         flex-basis: 100%;
     }
@@ -250,7 +279,7 @@ ul, ol {
     text-transform: capitalize;
     text-align: center;
     font-weight: 500;
-    width: calc((100% - 72px) / 4);
+    /*width: calc((100% - 72px) / 4);*/
 }
 
 .subtitle {
@@ -260,6 +289,23 @@ ul, ol {
     line-height: 1.2;
     letter-spacing: 0.02em;
     font-weight: 500;
+    text-align: center;
+    @media (min-width: 768px) {
+        /* 768px: Для планшетів */
+        text-align: left;
+    }
+}
+
+.studio-item .subtitle {
+    font-weight: 700;
+    font-size: 36px;
+
+    @media (min-width: 768px) {
+        /* 768px: Для планшетів */
+        text-align: left;
+        font-weight: 500;
+        font-size: 20px;
+    }
 }
 
 .content {
@@ -274,7 +320,6 @@ ul, ol {
 
 .icons-studio {
     margin-bottom: 8px;
-    display: flex;
     align-items: center;
     justify-content: center;
     border: 1px solid #8e8f99;
@@ -284,6 +329,13 @@ ul, ol {
     background: #f4f4fd;
     box-shadow: 10px 10px 8px 2px rgba(0, 0, 0, 0.3);
     gap: 24px;
+    display: none;
+
+    @media (min-width: 1158px) {
+        /* 1158px: Для десктопів */
+        display: flex;
+    }
+
 }
 
 .icons-studio-list {
@@ -315,13 +367,31 @@ ul, ol {
 }
 
 .our-team {
+    padding: 96px 0;
     background-color: #F4F4FD;
-    padding: 120px 0;
+    @media (min-width: 1158px) {
+        /* 1158px: Для десктопів */
+        padding: 120px 0;
+    }
 }
 
 .set {
-    display: flex;
-    gap: 24px;
+    gap: 72px;
+    display: grid;
+    grid-template-columns: repeat(1, 264px);
+    @media (min-width: 768px) {
+        /* 768px: Для планшетів */
+        column-gap: 24px;
+        row-gap: 64px;
+        grid-template-columns: repeat(2, 264px);
+    }
+
+    @media (min-width: 1158px) {
+        /* 1158px: Для десктопів */
+        grid-template-columns: repeat(4, 264px);
+        gap: 24px;
+    }
+
 }
 
 .list-item-cont {
@@ -388,15 +458,21 @@ ul, ol {
     align-items: center;
     justify-content: center;
     flex-direction: column;
-
     border-radius: 0 0 4px 4px;
-
-    width: 264px;
-
     box-shadow: 0 2px 1px 0 rgba(46, 47, 66, 0.08), 0 1px 1px 0 rgba(46, 47, 66, 0.16), 0 1px 6px 0 rgba(46, 47, 66, 0.08);
     background: #fff;
     text-align: center;
-    width: calc((100% - 72px) / 4);
+    /*width: 100%;*/
+    @media (min-width: 768px) {
+        /* 768px: Для планшетів */
+        /*gap: 20px;*/
+        /*width: calc(50% - 20px);*/
+    }
+
+    @media (min-width: 1158px) {
+        /* 1158px: Для десктопів */
+        /*width: calc((100% - 72px) / 4);*/
+    }
 }
 
 .list-item-cont .name {
@@ -441,10 +517,26 @@ ul, ol {
 }
 
 .our-portolio {
-    display: flex;
-    flex-wrap: wrap;
+    /*display: flex;*/
+    /*flex-wrap: wrap;*/
     column-gap: 24px;
     row-gap: 48px;
+    display: grid;
+    justify-content: center;
+    grid-template-columns: repeat(1, 288px);
+    @media (min-width: 768px) {
+        /* 768px: Для планшетів */
+        grid-template-columns: repeat(2, 356px);
+        column-gap: 24px;
+        row-gap: 72px;
+    }
+
+    @media (min-width: 1158px) {
+        /* 1158px: Для десктопів */
+        grid-template-columns: repeat(3, 360px);
+        column-gap: 24px;
+        row-gap: 48px;
+    }
 
 }
 
@@ -483,7 +575,6 @@ ul, ol {
 }
 
 li.app {
-    width: calc((100% - 48px) / 3);
     transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -526,8 +617,11 @@ li.app {
     letter-spacing: 0.02em;
     line-height: 1.5;
     padding: 100px 0;
-    height: 312px;
+    /*height: 312px;*/
     display: flex;
+}
+.footer-logo-text {
+    padding-right: 40px;
 }
 
 .container-footer {
@@ -538,14 +632,6 @@ li.app {
 
 }
 
-.footer-flex {
-    /* display: flex;
-   align-items: baseline; */
-}
-
-.footer-logo-text {
-    margin-right: 120px;
-}
 
 .text-center {
     text-align: center;
@@ -585,7 +671,7 @@ li.app {
 
 
 .media {
-    margin-bottom: 8px;
+    /*margin-bottom: 8px;*/
     display: inline-block;
     font-weight: 500;
     font-size: 16px;
@@ -593,7 +679,7 @@ li.app {
     letter-spacing: 0.02em;
     color: #fff;
     align-items: baseline;
-    margin-right: 120px;
+    /*margin-right: 120px;*/
 }
 
 .okolo-media {
@@ -965,13 +1051,20 @@ li.app {
     height: 80px;
     gap: 24px;
     align-items: baseline;
-    margin-left: 159px;
+    /*margin-left: 159px;*/
 }
 
 .form-subscribe {
     display: flex;
     gap: 24px;
-
+    flex-direction: column;
+    @media (min-width: 768px) {
+        flex-direction: row;
+        /* 768px: Для планшетів */
+    }
+    @media (min-width: 1158px) {
+        /* 1158px: Для десктопів */
+    }
 }
 
 .footer-button {
@@ -990,7 +1083,6 @@ li.app {
     border-radius: 4px;
     min-width: 165px;
     height: 40px;
-    margin-left: 24px;
 
 }
 
@@ -1012,8 +1104,19 @@ li.app {
 
 .container.footer-flex {
     display: flex;
-    align-items: center;
-    justify-content: center;
+    align-items: baseline;
+    gap: 80px;
+    flex-wrap: wrap;
+    justify-content: left;
+    @media (min-width: 768px) {
+        /* 768px: Для планшетів */
+        flex-wrap: wrap;
+    }
+    @media (min-width: 1158px) {
+        /* 1158px: Для десктопів */
+        flex-wrap: nowrap;
+        justify-content: center;
+    }
 }
 
 .modal-input.email {
