@@ -1219,23 +1219,6 @@ li.app {
 }
 
 
-.modal-check-icon {
-    /*top: 16px;*/
-    /*right: 16px;*/
-    /*width: 16px;*/
-    /*height: 16px;*/
-    /*border-radius: 2px;*/
-    /*display: inline-flex;*/
-    /*border: 1px solid rgba(46, 47, 66, 0.4);*/
-    /*padding: 0;*/
-    /*background-color: #ffffff;*/
-    /*align-items: center;*/
-    /*cursor: pointer;*/
-    /*transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), border 250ms cubic-bezier(0.4, 0, 0.2, 1);*/
-    /*stroke-width: 1px;*/
-    /*stroke: rgba(0, 0, 0, 0.1);*/
-}
-
 .modal-check-icon:hover {
     background-color: #404bbf;
     fill: #fff;
